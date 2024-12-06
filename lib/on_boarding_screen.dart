@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami_c13_friday/home.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -7,109 +8,98 @@ class OnBoardingScreen extends StatelessWidget {
 
   const OnBoardingScreen({super.key});
 
+  Widget _buildImage(String assetName, [double width = 350]) {
+    return Image.asset('assets/images/$assetName', width: width);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return OnBoardingSlider(
-      headerBackgroundColor: Color(0xFF202020),
-      finishButtonText: 'Home',
-      pageBackgroundColor: Color(0xFF202020),
-      onFinish: () {
+    var bodyStyle = GoogleFonts.elMessiri(
+      fontSize: 19.0,
+      color: const Color(0xFFE2BE7F),
+    );
+
+    var pageDecoration = PageDecoration(
+      titleTextStyle: GoogleFonts.elMessiri(
+        fontSize: 28.0,
+        fontWeight: FontWeight.w700,
+        color: const Color(0xFFE2BE7F),
+      ),
+      bodyTextStyle: bodyStyle,
+      bodyPadding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+      pageColor: const Color(0xFF202020),
+      imageFlex: 3,
+      imagePadding: EdgeInsets.zero,
+    );
+    return IntroductionScreen(
+      globalBackgroundColor: const Color(0xFF202020),
+      dotsFlex: 3,
+      dotsDecorator: const DotsDecorator(
+        color: Color(0xFF707070),
+        activeColor: Color(0xFFE2BE7F),
+      ),
+      showDoneButton: true,
+      showNextButton: true,
+      globalHeader: Image.asset("assets/images/onboarding_header.png"),
+      next: Text(
+        "Next",
+        style: GoogleFonts.elMessiri(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: const Color(0xFFE2BE7F),
+        ),
+      ),
+      done: Text(
+        "Finish",
+        style: GoogleFonts.elMessiri(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: const Color(0xFFE2BE7F),
+        ),
+      ),
+      onDone: () {
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
-
-      middle: Image.asset(
-        "assets/images/islami.png",
-        color: Color(0xFF202020),
-      ),
-      finishButtonStyle: FinishButtonStyle(
-        backgroundColor: Color(0xFFE2BE7F),
-      ),
-
-      // skipTextButton: Container(
-      //     width: double.infinity,
-
-      //     height: 300,
-      //     child: Image.asset("assets/images/islami.png")),
-      background: [
-        Image.asset('assets/images/onboarding_1.png'),
-        Image.asset('assets/images/onboarding_2.png'),
-        Image.asset('assets/images/onboarding_3.png'),
-      ],
-      totalPage: 3,
-      speed: 1.8,
-      pageBodies: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 480,
-              ),
-              Text(
-                'Welcome To Islmi App',
-                style: TextStyle(
-                    color: Color(0xFFE2BE7F),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
+      showBackButton: true,
+      back: Text(
+        "Back",
+        style: GoogleFonts.elMessiri(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: const Color(0xFFE2BE7F),
         ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 480,
-              ),
-              Text(
-                'Welcome To Islmi App',
-                style: TextStyle(
-                    color: Color(0xFFE2BE7F),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 24,
-              ),
-              Text(
-                "We Are Very Excited To Have You In Our Community",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color(0xFFE2BE7F),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500),
-              )
-            ],
-          ),
+      ),
+      pages: [
+        PageViewModel(
+          title: "Welcome To Islmi App",
+          body: "",
+          image: _buildImage('onboarding1.png'),
+          decoration: pageDecoration,
         ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 480,
-              ),
-              Text(
-                'Reading the Quran',
-                style: TextStyle(
-                    color: Color(0xFFE2BE7F),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 24,
-              ),
-              Text(
-                "Read, and your Lord is the Most Generous",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color(0xFFE2BE7F),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500),
-              )
-            ],
-          ),
+        PageViewModel(
+          title: "Welcome To Islami",
+          body: "We Are Very Excited To Have You In Our Community",
+          image: _buildImage('onboarding2.png'),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(
+          title: "Reading the Quran",
+          body: "Read, and your Lord is the Most Generous",
+          image: _buildImage('onboarding3.png'),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(
+          title: "Bearish",
+          body: "Praise the name of your Lord, the Most High",
+          image: _buildImage('onboarding4.png'),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(
+          title: "Holy Quran Radio",
+          body:
+              "You can listen to the Holy Quran Radio through the application for free and easily",
+          image: _buildImage('onboarding5.png'),
+          decoration: pageDecoration,
         ),
       ],
     );
