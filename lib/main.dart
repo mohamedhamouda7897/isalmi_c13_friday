@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_c13_friday/home.dart';
+import 'package:islami_c13_friday/home/home.dart';
 import 'package:islami_c13_friday/on_boarding_screen.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
-        HomeScreen.routeName: (context) => const HomeScreen(),
+        HomeScreen.routeName: (context) =>  HomeScreen(),
       },
       initialRoute: OnBoardingScreen.routeName,
     );
