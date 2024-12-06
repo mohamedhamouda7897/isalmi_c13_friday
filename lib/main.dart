@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
         HomeScreen.routeName: (context) => const HomeScreen(),
       },
-      initialRoute: "/",
+      initialRoute: OnBoardingScreen.routeName,
     );
   }
 }
