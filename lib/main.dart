@@ -3,7 +3,7 @@ import 'package:islami_c13_friday/home.dart';
 import 'package:islami_c13_friday/on_boarding_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
-        HomeScreen.routeName: (context) => HomeScreen(),
+        OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
       },
       initialRoute: "/",
     );
