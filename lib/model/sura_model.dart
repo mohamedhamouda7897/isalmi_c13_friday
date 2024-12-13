@@ -381,18 +381,18 @@ class SuraModel {
     6
   ];
 
-  Map<String, Map<String, dynamic>> map = {
-    "0": {
-      "nameAr": "الفاتحه",
-      "nameEn": "Al-Fatihah",
-      "index": "1",
-      "numOfVerses": "7",
-    },
-    "0": {
-      "nameAr": "الفاتحه",
-      "nameEn": "Al-Fatihah",
-      "index": "1",
-      "numOfVerses": "7",
-    },
-  };
+  // Map<String, Map<String, dynamic>> map = {
+  //   "0": {
+  //     "nameAr": "الفاتحه",
+  //     "nameEn": "Al-Fatihah",
+  //     "index": "1",
+  //     "numOfVerses": "7",
+  //   },
+  //   "0": {
+  //     "nameAr": "الفاتحه",
+  //     "nameEn": "Al-Fatihah",
+  //     "index": "1",
+  //     "numOfVerses": "7",
+  //   },
+  // };
 }
