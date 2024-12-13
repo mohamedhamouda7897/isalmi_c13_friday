@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:islami_c13_friday/cache/cache_helper.dart';
 import 'package:islami_c13_friday/home/home.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -58,6 +59,7 @@ class OnBoardingScreen extends StatelessWidget {
         ),
       ),
       onDone: () {
+        CacheHelper.saveEligibility();
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       showBackButton: true,
