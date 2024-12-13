@@ -17,14 +17,14 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var bodyStyle = GoogleFonts.elMessiri(
       fontSize: 19.0,
-      color: const Color(0xFFE2BE7F),
+      color: Theme.of(context).primaryColor,
     );
 
     var pageDecoration = PageDecoration(
       titleTextStyle: GoogleFonts.elMessiri(
         fontSize: 28.0,
         fontWeight: FontWeight.w700,
-        color: const Color(0xFFE2BE7F),
+        color: Theme.of(context).primaryColor,
       ),
       bodyTextStyle: bodyStyle,
       bodyPadding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
@@ -35,9 +35,9 @@ class OnBoardingScreen extends StatelessWidget {
     return IntroductionScreen(
       globalBackgroundColor: const Color(0xFF202020),
       dotsFlex: 3,
-      dotsDecorator: const DotsDecorator(
+      dotsDecorator:  DotsDecorator(
         color: Color(0xFF707070),
-        activeColor: Color(0xFFE2BE7F),
+        activeColor: Theme.of(context).primaryColor,
       ),
       showDoneButton: true,
       showNextButton: true,
@@ -47,7 +47,7 @@ class OnBoardingScreen extends StatelessWidget {
         style: GoogleFonts.elMessiri(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: const Color(0xFFE2BE7F),
+          color:Theme.of(context).primaryColor,
         ),
       ),
       done: Text(
@@ -55,7 +55,7 @@ class OnBoardingScreen extends StatelessWidget {
         style: GoogleFonts.elMessiri(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: const Color(0xFFE2BE7F),
+          color: Theme.of(context).primaryColor,
         ),
       ),
       onDone: () {
@@ -68,7 +68,7 @@ class OnBoardingScreen extends StatelessWidget {
         style: GoogleFonts.elMessiri(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: const Color(0xFFE2BE7F),
+          color: Theme.of(context).primaryColor,
         ),
       ),
       pages: [
