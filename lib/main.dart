@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_c13_friday/cache/cache_helper.dart';
+import 'package:islami_c13_friday/hadeth_details/hadeth_details.dart';
 import 'package:islami_c13_friday/home/home.dart';
 import 'package:islami_c13_friday/my_theme_data.dart';
 import 'package:islami_c13_friday/on_boarding_screen.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
         SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
       },
       initialRoute: CacheHelper.getEligibility() == true
