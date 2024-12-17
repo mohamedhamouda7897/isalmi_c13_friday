@@ -17,18 +17,22 @@ class SuraNameItem extends StatelessWidget {
           Stack(
             alignment: Alignment.center,
             children: [
-              Image.asset("assets/images/sura_number.png"),
+              Image.asset(
+                "assets/images/sura_number.png",
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 4),
-                child: Text("${model.index}",
-                    style: GoogleFonts.elMessiri(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white)),
+                child: Text(
+                  "${model.index + 1}",
+                  style: GoogleFonts.elMessiri(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             width: 16,
           ),
           Expanded(
@@ -38,16 +42,18 @@ class SuraNameItem extends StatelessWidget {
                 Text(
                   model.nameEn,
                   style: GoogleFonts.elMessiri(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
                 Text(
                   "${model.numOfVerses} Verses",
                   style: GoogleFonts.elMessiri(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
@@ -55,7 +61,10 @@ class SuraNameItem extends StatelessWidget {
           Text(
             model.nameAr,
             style: GoogleFonts.elMessiri(
-                fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
         ],
       ),

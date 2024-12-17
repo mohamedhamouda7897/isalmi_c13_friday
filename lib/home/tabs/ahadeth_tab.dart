@@ -6,7 +6,7 @@ import 'package:islami_c13_friday/model/hadeth_model.dart';
 import 'package:islami_c13_friday/my_theme_data.dart';
 
 class AhadethTab extends StatefulWidget {
-  AhadethTab({super.key});
+  const AhadethTab({super.key});
 
   @override
   State<AhadethTab> createState() => _AhadethTabState();
@@ -25,8 +25,7 @@ class _AhadethTabState extends State<AhadethTab> {
           child: CarouselSlider(
             options: CarouselOptions(
               height: double.infinity,
-              autoPlay: true,
-
+              // autoPlay: true,
             ),
             items: ahadeth.map((hadeth) {
               return Builder(
@@ -34,11 +33,15 @@ class _AhadethTabState extends State<AhadethTab> {
                   return InkWell(
                     onTap: () {
                       Navigator.pushNamed(
-                          context, HadethDetailsScreen.routeName,
-                          arguments: hadeth);
+                        context,
+                        HadethDetailsScreen.routeName,
+                        arguments: hadeth,
+                      );
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 12),
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                      ),
                       child: Stack(
                         alignment: Alignment.topCenter,
                         children: [
@@ -51,8 +54,9 @@ class _AhadethTabState extends State<AhadethTab> {
                           Column(
                             children: [
                               Container(
-                                margin: EdgeInsets.only(top: 24),
-                                padding: EdgeInsets.symmetric(horizontal: 12),
+                                margin: const EdgeInsets.only(top: 24),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 12),
                                 child: Text(
                                   hadeth.title,
                                   textAlign: TextAlign.center,
@@ -60,7 +64,9 @@ class _AhadethTabState extends State<AhadethTab> {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyLarge!
-                                      .copyWith(color: MyThemeData.blackColor),
+                                      .copyWith(
+                                        color: MyThemeData.blackColor,
+                                      ),
                                 ),
                               ),
                               Directionality(
@@ -76,7 +82,8 @@ class _AhadethTabState extends State<AhadethTab> {
                                         .textTheme
                                         .bodyMedium!
                                         .copyWith(
-                                            color: MyThemeData.blackColor),
+                                          color: MyThemeData.blackColor,
+                                        ),
                                   ),
                                 ),
                               )
@@ -91,7 +98,7 @@ class _AhadethTabState extends State<AhadethTab> {
             }).toList(),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 16,
         )
       ],

@@ -6,7 +6,7 @@ import 'package:islami_c13_friday/model/sura_model.dart';
 import 'package:islami_c13_friday/sura_details/sura_details.dart';
 
 class QuranTab extends StatefulWidget {
-  QuranTab({super.key});
+  const QuranTab({super.key});
 
   @override
   State<QuranTab> createState() => _QuranTabState();
@@ -31,7 +31,9 @@ class _QuranTabState extends State<QuranTab> {
         }
       }
     }
-    setState(() {});
+    setState(
+      () {},
+    );
   }
 
   @override
@@ -58,7 +60,10 @@ class _QuranTabState extends State<QuranTab> {
           Text(
             "Suras List",
             style: GoogleFonts.elMessiri(
-                fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
           Expanded(
             child: ListView.separated(
@@ -71,8 +76,11 @@ class _QuranTabState extends State<QuranTab> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, SuraDetailsScreen.routeName,
-                        arguments: SuraModel.getSuraModel(index));
+                    Navigator.pushNamed(
+                      context,
+                      SuraDetailsScreen.routeName,
+                      arguments: SuraModel.getSuraModel(index),
+                    );
                   },
                   child: SuraNameItem(
                     model: searchController.text.isNotEmpty
@@ -139,16 +147,24 @@ class _QuranTabState extends State<QuranTab> {
             labelStyle: GoogleFonts.elMessiri(
                 fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
             prefixIcon: const ImageIcon(
-              AssetImage("assets/images/quran.png"),
+              AssetImage(
+                "assets/images/quran.png",
+              ),
               color: Color(0xFFE2BE7F),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Color(0xFFE2BE7F), width: 2),
+              borderSide: const BorderSide(
+                color: Color(0xFFE2BE7F),
+                width: 2,
+              ),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Color(0xFFE2BE7F), width: 2),
+              borderSide: const BorderSide(
+                color: Color(0xFFE2BE7F),
+                width: 2,
+              ),
             ),
           ),
         ),

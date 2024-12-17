@@ -11,8 +11,7 @@ class SebhaTab extends StatelessWidget {
         children: [
           Text(
             "Sebha tab",
-            style: TextStyle(fontSize: 30, color: Colors.white),
-          )
+          ),
         ],
       ),
     );

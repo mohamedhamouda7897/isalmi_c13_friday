@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_c13_friday/cache/cache_helper.dart';
 import 'package:islami_c13_friday/hadeth_details/hadeth_details.dart';
 import 'package:islami_c13_friday/home/home.dart';

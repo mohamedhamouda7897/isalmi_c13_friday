@@ -8,7 +8,7 @@ import 'package:islami_c13_friday/home/tabs/time_tab.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
 
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -21,28 +21,43 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                  "assets/images/${getBackgroundName(selectedIndex)}.png"),
-              fit: BoxFit.cover)),
+        image: DecorationImage(
+          image: AssetImage(
+            "assets/images/${getBackgroundName(selectedIndex)}.png",
+          ),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedIndex,
           onTap: (value) {
             selectedIndex = value;
-            setState(() {});
+            setState(
+              () {},
+            );
           },
           items: [
             BottomNavigationBarItem(
-                icon: _buildNavItem("quran", 0), label: "Quran"),
+              icon: _buildNavItem("quran", 0),
+              label: "Quran",
+            ),
             BottomNavigationBarItem(
-                icon: _buildNavItem("ahadeth", 1), label: "Ahadeth"),
+              icon: _buildNavItem("ahadeth", 1),
+              label: "Ahadeth",
+            ),
             BottomNavigationBarItem(
-                icon: _buildNavItem("sebha", 2), label: "Sebha"),
+              icon: _buildNavItem("sebha", 2),
+              label: "Sebha",
+            ),
             BottomNavigationBarItem(
-                icon: _buildNavItem("ic_radio", 3), label: "Radio"),
+              icon: _buildNavItem("ic_radio", 3),
+              label: "Radio",
+            ),
             BottomNavigationBarItem(
-                icon: _buildNavItem("dates", 4), label: "Times"),
+              icon: _buildNavItem("dates", 4),
+              label: "Times",
+            ),
           ],
         ),
         body: Column(
@@ -56,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<Widget> tabs = [
-    QuranTab(),
+    const QuranTab(),
     AhadethTab(),
     SebhaTab(),
     RadioTab(),
@@ -82,12 +97,22 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildNavItem(String imageName, int index) {
     return selectedIndex == index
         ? Container(
-            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 20),
+            padding: const EdgeInsets.symmetric(
+              vertical: 6,
+              horizontal: 20,
+            ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(66),
               color: const Color(0x99202020),
             ),
-            child: ImageIcon(AssetImage("assets/images/$imageName.png")))
-        : ImageIcon(AssetImage("assets/images/$imageName.png"));
+            child: ImageIcon(
+              AssetImage("assets/images/$imageName.png"),
+            ),
+          )
+        : ImageIcon(
+            AssetImage(
+              "assets/images/$imageName.png",
+            ),
+          );
   }
 }
