@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:islami_c13_friday/home.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_c13_friday/cache/cache_helper.dart';
+import 'package:islami_c13_friday/hadeth_details/hadeth_details.dart';
+import 'package:islami_c13_friday/home/home.dart';
+import 'package:islami_c13_friday/my_theme_data.dart';
 import 'package:islami_c13_friday/on_boarding_screen.dart';
+import 'package:islami_c13_friday/sura_details/sura_details.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
   runApp(const MyApp());
 }
 
@@ -13,11 +20,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: ThemeMode.light,
       routes: {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
-        HomeScreen.routeName: (context) => const HomeScreen(),
+        SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
+        HomeScreen.routeName: (context) => HomeScreen(),
       },
-      initialRoute: "/",
+      initialRoute: CacheHelper.getEligibility() == true
+          ? HomeScreen.routeName
+          : OnBoardingScreen.routeName,
     );
   }
 }
