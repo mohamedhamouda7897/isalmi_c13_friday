@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_c13_friday/my_theme_data.dart';
 
-import 'radio_container.dart';
 import 'radio_item.dart';
 
 class RadioTab extends StatefulWidget {
