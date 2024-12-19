@@ -3,7 +3,7 @@ import 'package:islami_c13_friday/home/tabs/ahadeth_tab.dart';
 import 'package:islami_c13_friday/home/tabs/quran_tab/quran_tab.dart';
 import 'package:islami_c13_friday/home/tabs/radio_tab/radio_tab.dart';
 import 'package:islami_c13_friday/home/tabs/sebha_tab.dart';
-import 'package:islami_c13_friday/home/tabs/time_tab.dart';
+import 'package:islami_c13_friday/home/tabs/times_tab/times_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
@@ -72,10 +72,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> tabs = [
     const QuranTab(),
-    AhadethTab(),
-    SebhaTab(),
-    RadioTab(),
-    TimeTab(),
+    const AhadethTab(),
+    const SebhaTab(),
+    const RadioTab(),
+    const TimesTab(),
   ];
 
   String getBackgroundName(int index) {
