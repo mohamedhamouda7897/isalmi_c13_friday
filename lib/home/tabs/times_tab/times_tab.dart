@@ -1,10 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_c13_friday/home/tabs/times_tab/prayer_container.dart';
 import 'package:islami_c13_friday/my_theme_data.dart';
-
-import '../../../hadeth_details/hadeth_details.dart';
 
 class TimesTab extends StatelessWidget {
   const TimesTab({super.key});
