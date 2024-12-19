@@ -4,6 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 class MyThemeData {
   static const Color primaryColor = Color(0xFFE2BE7F);
   static const Color blackColor = Color(0xFF202020);
+  static const Color whiteClr =  Colors.white;
+  static const Color blackTransparent = Color(0xB2202020);
+  static const Color brownClr =  Color(0xff856B3F);
   static ThemeData lightTheme = ThemeData(
     primaryColor: primaryColor,
     scaffoldBackgroundColor: Colors.transparent,
@@ -38,6 +41,16 @@ class MyThemeData {
         fontWeight: FontWeight.bold,
         color: primaryColor,
       ),
+      displaySmall: GoogleFonts.exo2(
+          color: Colors.white,
+          fontSize: 14,
+          fontWeight: FontWeight.w700
+      ),
+      displayLarge: GoogleFonts.exo2(
+          color: Colors.white,
+          fontSize: 24,
+          fontWeight: FontWeight.w700
+      )
     ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
