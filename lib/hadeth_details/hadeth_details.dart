@@ -24,19 +24,19 @@ class HadethDetailsScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 90,
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: ListView.separated(
-                    separatorBuilder: (context, index) => SizedBox(
+                    separatorBuilder: (context, index) => const SizedBox(
                       height: 8,
                     ),
                     itemBuilder: (context, index) {
                       return Container(
-                          padding: EdgeInsets.symmetric(vertical: 8),
+                          padding: const EdgeInsets.symmetric(vertical: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18),
                             // border: Border.all(
@@ -49,7 +49,7 @@ class HadethDetailsScreen extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 TextSpan(children: [
                                   TextSpan(
-                                    text: "${model.content[index]}",
+                                    text: model.content[index],
                                     style:
                                         Theme.of(context).textTheme.bodyMedium,
                                   ),

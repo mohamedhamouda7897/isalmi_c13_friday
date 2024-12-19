@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c13_friday/home/tabs/ahadeth_tab.dart';
 import 'package:islami_c13_friday/home/tabs/quran_tab/quran_tab.dart';
-import 'package:islami_c13_friday/home/tabs/radio_tab.dart';
+import 'package:islami_c13_friday/home/tabs/radio_tab/radio_tab.dart';
 import 'package:islami_c13_friday/home/tabs/sebha_tab.dart';
 import 'package:islami_c13_friday/home/tabs/time_tab.dart';
 
