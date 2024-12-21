@@ -18,7 +18,6 @@ class _AhadethTabState extends State<AhadethTab> {
   @override
   Widget build(BuildContext context) {
     loadHadethFile();
-
     return Column(
       children: [
         Expanded(

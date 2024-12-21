@@ -27,42 +27,43 @@ class TimesTab extends StatelessWidget {
           ),
           Expanded(
             child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                        color: MyThemeData.primaryColor,
-                        width: 2,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: MyThemeData.primaryColor,
+                      width: 2,
+                    ),
+                  ),
+                  width: 185,
+                  height: 259,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage(
+                          'assets/images/evening.png',
+                        ),
                       ),
-                    ),
-                    width: 185,
-                    height: 259,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        const Image(
-                          fit: BoxFit.fill,
-                          image: AssetImage(
-                            'assets/images/evening.png',
-                          ),
+                      Text(
+                        'Evening Azkar',
+                        style: GoogleFonts.aBeeZee(
+                          fontSize: 20,
+                          color: Colors.white,
                         ),
-                        Text(
-                          'Evening Azkar',
-                          style: GoogleFonts.aBeeZee(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-                separatorBuilder: (context, index) => const SizedBox(
-                      width: 12,
-                    ),
-                itemCount: 2),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => const SizedBox(
+                width: 12,
+              ),
+              itemCount: 2,
+            ),
           ),
         ],
       ),
