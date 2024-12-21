@@ -8,7 +8,8 @@ class PrayerTimeItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-
+        height: 108,
+        width: 104,
         margin: const EdgeInsets.all(16),
         padding: const EdgeInsets.symmetric(
           horizontal: 8,

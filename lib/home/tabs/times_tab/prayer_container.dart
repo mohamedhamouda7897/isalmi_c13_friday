@@ -92,12 +92,12 @@ class PrayerContainer extends StatelessWidget {
               PrayerTimeItem(),
             ],
             options: CarouselOptions(
-              // autoPlay: true,
-              aspectRatio: 2 / 1,
-              autoPlayCurve: Curves.fastOutSlowIn,
+              autoPlay: true,
+              aspectRatio: 2/1,
+              autoPlayCurve: Curves.bounceOut,
               enableInfiniteScroll: true,
               autoPlayAnimationDuration: const Duration(milliseconds: 800),
-              viewportFraction: 0.8,
+              viewportFraction: .4,
             ),
           ),
           Text(
