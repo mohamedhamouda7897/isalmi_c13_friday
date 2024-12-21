@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
               label: "Ahadeth",
             ),
             BottomNavigationBarItem(
-              icon: _buildNavItem("sebha", 2),
+              icon: _buildNavItem("sebha_tab", 2),
               label: "Sebha",
             ),
             BottomNavigationBarItem(
