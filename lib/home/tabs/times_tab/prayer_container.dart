@@ -94,7 +94,6 @@ class PrayerContainer extends StatelessWidget {
             options: CarouselOptions(
               autoPlay: true,
               aspectRatio: 2/1,
-              autoPlayCurve: Curves.bounceOut,
               enableInfiniteScroll: true,
               autoPlayAnimationDuration: const Duration(milliseconds: 800),
               viewportFraction: .4,
